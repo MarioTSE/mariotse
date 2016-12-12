@@ -5,7 +5,7 @@ var AlunoSchema = new mongoose.Schema({
   idade: Number,
   turma : String,
   turno : String,
-  matricula : number
+  matricula : Number
 });
 
 module.exports = mongoose.model('Aluno', AlunoSchema);
