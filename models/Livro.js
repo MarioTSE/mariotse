@@ -7,4 +7,4 @@ var LivroSchema = new mongoose.Schema({
   editora : String
 });
 
-module.exports = mongoose.model('Aluno', AlunoSchema);
+module.exports = mongoose.model('Livro', LivroSchema);
