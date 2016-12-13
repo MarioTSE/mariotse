@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var mongoose = require('EstadoCivil');
+var EstadoCivil = require('EstadoCivil');
 
 var ServidorSchema = new mongoose.Schema({
     matricula: Number,
