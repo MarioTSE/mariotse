@@ -9,7 +9,7 @@ var usuario = require('./routes/usuario');
 var perfil = require('./routes/perfil');
 var aluno = require('./routes/aluno');
 var livro = require('./routes/livro');
-var livro = require('./routes/servidor');
+var servidor = require('./routes/servidor');
 
 var mongoose = require('mongoose');
 

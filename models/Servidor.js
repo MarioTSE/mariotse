@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-//var EstadoCivil = require('EstadoCivil');
+var EstadoCivil = require('EstadoCivil');
 
 var ServidorSchema = new mongoose.Schema({
     matricula: Number,
@@ -7,10 +7,11 @@ var ServidorSchema = new mongoose.Schema({
     dataNascimento: Date,
     sexo: String,
     //estadoCivil    : {s:"solteiro", c : "casado"},
-    estadoCivil: {
-        codigo: String,
-        descricao: String
-    },
+//    estadoCivil: {
+//        codigo: String,
+//        descricao: String
+//    },
+    estadoCivil:EstadoCivil,
     cepResidencia: String,
     logradouroResidencia: String,
     numeroLogradouroResidencia: String,
