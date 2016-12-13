@@ -10,6 +10,7 @@ var perfil = require('./routes/perfil');
 var aluno = require('./routes/aluno');
 var livro = require('./routes/livro');
 var servidor = require('./routes/servidor');
+var estadoCivil = require('./routes/estadoCivil');
 
 var mongoose = require('mongoose');
 
@@ -60,6 +61,7 @@ app.use('/perfil', perfil);
 app.use('/aluno', aluno);
 app.use('/livro', livro);
 app.use('/servidor', servidor);
+app.use('/estadoCivil', estadoCivil);
 
 
 
