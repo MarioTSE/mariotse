@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var EstadoCivilSchema = new mongoose.Schema({
-  codigo: string,
+  codigo: String,
   descricao : String
 });
 
