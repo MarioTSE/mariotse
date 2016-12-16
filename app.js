@@ -3,14 +3,12 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var cors = require('cors')
 
 var routes = require('./routes/index');
 var usuario = require('./routes/usuario');
 var perfil = require('./routes/perfil');
-var aluno = require('./routes/aluno');
-var livro = require('./routes/livro');
-var servidor = require('./routes/servidor');
-var estadoCivil = require('./routes/estadoCivil');
+var login = require('./routes/login');
 
 var mongoose = require('mongoose');
 
@@ -26,6 +24,7 @@ mongoose.connect('mongodb://demo:demo@ds163417.mlab.com:63417/db_projeto', funct
 
 var app = express();
 
+
 // Engine de configuração de view
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -39,29 +38,14 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cors());
 // // Add headers
-app.use(function(req, res, next) {
 
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-
-    // intercept OPTIONS method
-    if ('OPTIONS' == req.method) {
-        res.send(200);
-    } else {
-        next();
-    }
-});
 
 app.use('/', routes);
 app.use('/usuario', usuario);
 app.use('/perfil', perfil);
-app.use('/aluno', aluno);
-app.use('/livro', livro);
-app.use('/servidor', servidor);
-app.use('/estadoCivil', estadoCivil);
+app.use('/login', login);
 
 
 

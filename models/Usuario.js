@@ -6,8 +6,8 @@ var UsuarioSchema = new mongoose.Schema({
   perfil:{
   	 nome:String
   },
-  cep:Number,
-  endereco:String
+  login:String,
+  senha:String
 });
 
 module.exports = mongoose.model('Usuario', UsuarioSchema);
